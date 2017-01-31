@@ -1,33 +1,49 @@
 package main
 
 import (
-	"encoding/json"
 	"flag"
 	"fmt"
+	"github.com/ugorji/go/codec"
 	"os"
 	"text/template"
 )
 
 func main() {
-	conf := flag.String("j", "", "JSON file path")
+	confJSON := flag.String("j", "", "specify JSON path")
+	confMP := flag.String("m", "", "specify MessagePack path")
 	flag.Parse()
 
-	if *conf == "" {
-		fmt.Fprintln(os.Stderr, "no JSON file specified.\nusage: ")
+	var handle codec.Handle
+	var conf string
+	var jh codec.JsonHandle
+	var mh codec.MsgpackHandle
+
+	if *confJSON == "" && *confMP == "" {
+		fmt.Fprintln(os.Stderr, "no config file specified.\nusage: gtp [OPTION] [FILE]...")
 		flag.PrintDefaults()
 		os.Exit(1)
+	} else if *confJSON != "" && *confMP != "" {
+		fmt.Fprintln(os.Stderr, "cannot specify both of JSON and MessagePack")
+		os.Exit(1)
+	} else if *confJSON != "" {
+		conf = *confJSON
+		handle = &jh
+	} else {
+		conf = *confMP
+		mh.RawToString = true
+		handle = &mh
 	}
 
-	confFile, err := os.Open(*conf)
+	confFile, err := os.Open(conf)
 	if err != nil {
 		fmt.Fprintln(os.Stderr, err)
 		os.Exit(1)
 	}
 
-	confDecoder := json.NewDecoder(confFile)
 	var confData interface{}
+	confDecoder := codec.NewDecoder(confFile, handle)
 	if err := confDecoder.Decode(&confData); err != nil {
-		fmt.Fprintln(os.Stderr, "JSON parse error:", err)
+		fmt.Fprintln(os.Stderr, "parse error: ", err)
 		os.Exit(1)
 	}
 
