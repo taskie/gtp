@@ -1,44 +1,15 @@
-# gtp
+# gtp - macro processor
 
-Macro Processor using Go text/template with JSON / MessagePack
+powered by Go (text|html)/template
 
-## Usage
+## Install
 
-```
-gtp [OPTION] [FILE]...
-
-OPTION:
-    -j [JSON]: specify JSON path
-    -m [Messagepack]: specify MessagePack path
+```sh
+go install github.com/taskie/gtp/cmd/gtp
 ```
 
-## Example (JSON)
-
-
-### data.json
-
-```json
-{"where":"world"}
-```
-
-### template.txt
-
-```
-Hello, {{.where}}!
-```
-
-### Execute
-
-```bash
-gtp -j data.json template.txt
-```
-
-### Output
-
-```
-Hello, world!
-```
+or see <https://github.com/taskie/ore>
 
 ## License
 
-Public Domain
+Apache License 2.0
