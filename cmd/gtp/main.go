@@ -1,10 +1,11 @@
 package main
 
 import (
-	"os"
-	"github.com/taskie/gtp"
+	"github.com/taskie/gtp/cli"
 )
 
+var revision = ""
+
 func main() {
-	gtp.Main(os.Args)
+	cli.Main()
 }
