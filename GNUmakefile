@@ -34,7 +34,7 @@ dep-graph:
 	dep status -dot | dot -Tpng -o images/dependency.png
 
 pre-commit:
-	$(MAKE) dep-init
+	# $(MAKE) dep-init
 	$(MAKE) dep-ensure
 	$(MAKE) dep-graph
 	$(MAKE) fmt

@@ -1,9 +1,9 @@
 package cli
 
 import (
-	"github.com/taskie/gtp"
 	"fmt"
 	"github.com/jessevdk/go-flags"
+	"github.com/taskie/gtp"
 	"os"
 )
 
