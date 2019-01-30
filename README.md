@@ -11,7 +11,13 @@ go install github.com/taskie/gtp/cmd/gtp
 ## Usage
 
 ```sh
-gtp -t hello.tmpl <john.json >john.txt
+gtp -d john.json hello.tmpl >john.txt
+```
+
+or
+
+```sh
+gtp -D json hello.tmpl <john.json >john.txt
 ```
 
 ### Template (hello.tmpl)

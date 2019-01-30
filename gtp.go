@@ -2,10 +2,11 @@ package gtp
 
 import (
 	"fmt"
-	"github.com/taskie/jc"
 	htmltemplate "html/template"
 	"io"
 	"text/template"
+
+	"github.com/taskie/jc"
 )
 
 var (
@@ -40,15 +41,13 @@ func (gtp *Gtp) Execute(w io.Writer, data interface{}) error {
 	}
 }
 
-func (gtp *Gtp) Run(r io.Reader, w io.Writer) error {
+func (gtp *Gtp) Run(w io.Writer, r io.Reader) error {
 	if len(gtp.TemplateFilePaths) == 0 {
 		return fmt.Errorf("Please specify template file path")
 	}
-	jco := jc.Jc{
-		FromType: gtp.DataType,
-	}
+	dec := jc.NewDecoder(r, gtp.DataType)
 	var data interface{}
-	err := jco.Decode(r, &data)
+	err := dec.Decode(&data)
 	if err != nil {
 		return err
 	}

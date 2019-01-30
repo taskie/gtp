@@ -2,58 +2,57 @@
 
 
 [[projects]]
-  digest = "1:9f3b30d9f8e0d7040f729b82dcbc8f0dead820a133b3147ce355fc451f32d761"
   name = "github.com/BurntSushi/toml"
   packages = ["."]
-  pruneopts = "UT"
   revision = "3012a1dbe2e4bd1391d42b32f0577cb7bbc7f005"
   version = "v0.3.1"
 
 [[projects]]
-  digest = "1:97df918963298c287643883209a2c3f642e6593379f97ab400c2a2e219ab647d"
   name = "github.com/golang/protobuf"
   packages = ["proto"]
-  pruneopts = "UT"
   revision = "aa810b61a9c79d51363740d207bb46cf8e620ed5"
   version = "v1.2.0"
 
 [[projects]]
-  digest = "1:a2cff208d4759f6ba1b1cd228587b0a1869f95f22542ec9cd17fff64430113c7"
   name = "github.com/jessevdk/go-flags"
   packages = ["."]
-  pruneopts = "UT"
   revision = "c6ca198ec95c841fdb89fc0de7496fed11ab854e"
   version = "v1.4.0"
 
 [[projects]]
-  branch = "master"
-  digest = "1:af18bd1062215aa07cd298864224feab02ccb8b77a4e245a02548f7307070274"
-  name = "github.com/taskie/jc"
+  name = "github.com/joho/godotenv"
   packages = ["."]
-  pruneopts = "UT"
-  revision = "4f02d64fa98993e2d2d3d5587e2e46f661bcaf16"
+  revision = "23d116af351c84513e1946b527c88823e476be13"
+  version = "v1.3.0"
 
 [[projects]]
-  digest = "1:3c1529ffdd2bdcdcb06d5c05f7430c83d220d8dd5482e24dbb81596e44434feb"
+  branch = "master"
+  name = "github.com/taskie/jc"
+  packages = ["."]
+  revision = "52e009b38f8d6a59a26c47456a22453a227bca66"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/taskie/osplus"
+  packages = ["."]
+  revision = "862d90b642f9a40c69e0fb02729028227a3ca739"
+
+[[projects]]
   name = "github.com/vmihailenco/msgpack"
   packages = [
     ".",
-    "codes",
+    "codes"
   ]
-  pruneopts = "UT"
-  revision = "935c5b540faab4d4922ae6f1fddcf77a726f259c"
-  version = "v4.0.0"
+  revision = "b962d79429a3c5135cca9ed528943f1551ec04df"
+  version = "v4.0.2"
 
 [[projects]]
   branch = "master"
-  digest = "1:76ee51c3f468493aff39dbacc401e8831fbb765104cbf613b89bef01cf4bad70"
   name = "golang.org/x/net"
   packages = ["context"]
-  pruneopts = "UT"
-  revision = "2f5d2388922f370f4355f327fcf4cfe9f5583908"
+  revision = "d26f9f9a57f3fab6a695bec0d84433c2c50f8bbf"
 
 [[projects]]
-  digest = "1:9c89d32a15e9941a6d5c396cc54f9afbcca6ea349b33d997d72119a7a67803f4"
   name = "google.golang.org/appengine"
   packages = [
     ".",
@@ -64,26 +63,20 @@
     "internal/datastore",
     "internal/log",
     "internal/modules",
-    "internal/remote_api",
+    "internal/remote_api"
   ]
-  pruneopts = "UT"
-  revision = "ae0ab99deb4dc413a2b4bd6c8bdd0eb67f1e4d06"
-  version = "v1.2.0"
+  revision = "e9657d882bb81064595ca3b56cbe2546bbabf7b1"
+  version = "v1.4.0"
 
 [[projects]]
-  digest = "1:342378ac4dcb378a5448dd723f0784ae519383532f5e70ade24132c4c8693202"
   name = "gopkg.in/yaml.v2"
   packages = ["."]
-  pruneopts = "UT"
-  revision = "5420a8b6744d3b0345ab293f6fcba19c978f1183"
-  version = "v2.2.1"
+  revision = "51d6538a90f86fe93ac480b35f37b2be17fef232"
+  version = "v2.2.2"
 
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  input-imports = [
-    "github.com/jessevdk/go-flags",
-    "github.com/taskie/jc",
-  ]
+  inputs-digest = "5f6d5c202fac8486e6849f5f99a7e5b289a3c92f25218290bc6afbf07318b938"
   solver-name = "gps-cdcl"
   solver-version = 1
