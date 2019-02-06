@@ -3,11 +3,11 @@
 CMD_DIR := cmd/gtp
 
 build:
-	go build -v -ldflags "-s -w -X fwv.Revision=$(shell git rev-parse --short HEAD)"
+	go build -v -ldflags "-s -w -X gtp.Revision=$(shell git rev-parse --short HEAD)"
 	$(MAKE) -C $(CMD_DIR) build
 
 install:
-	go install -v -ldflags "-s -w -X fwv.Revision=$(shell git rev-parse --short HEAD)"
+	go install -v -ldflags "-s -w -X gtp.Revision=$(shell git rev-parse --short HEAD)"
 	$(MAKE) -C $(CMD_DIR) install
 
 test:
