@@ -1,11 +1,9 @@
 package main
 
 import (
-	"github.com/taskie/gtp/cli"
+	"github.com/taskie/gtp/cli/gtp"
 )
 
-var revision = ""
-
 func main() {
-	cli.Main()
+	gtp.Main()
 }
